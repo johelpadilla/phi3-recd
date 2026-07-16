@@ -1,0 +1,22 @@
+{
+  "deposition_id": 21400599,
+  "doi": "10.5281/zenodo.21400599",
+  "doi_url": "https://doi.org/10.5281/zenodo.21400599",
+  "bucket": "https://zenodo.org/api/files/9b9a79ea-e60a-47ac-8d9f-0057b5d0c1e9",
+  "html": "https://zenodo.org/deposit/21400599",
+  "base": "https://zenodo.org",
+  "created": "2026-07-16",
+  "github": "https://github.com/johelpadilla/phi3-recd",
+  "files": [
+    "manuscript_es.md",
+    "CITATION.cff",
+    "README.md",
+    "phi3-recd-v0.5.0.zip",
+    "Phi3_RECD_Integracion_Dinamica_ES_v0.5.pdf",
+    "LICENSE",
+    "Phi3_RECD_Dynamic_Integration_v0.5.pdf",
+    "manuscript.md"
+  ],
+  "published": "2026-07-16",
+  "record_html": "https://zenodo.org/record/21400599"
+}

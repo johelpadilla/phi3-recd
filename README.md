@@ -5,7 +5,8 @@
 **Author:** Johel Padilla-Villanueva  
 **Status:** Draft **v0.5** — methods + synthetic S0–S2 + dual-domain real-data smoke, unified contrast narrative (July 2026)  
 **Python package:** [`phi3-recd`](https://pypi.org/project/phi3-recd/) **v0.5.0** (optional coupling layer; NumPy only)  
-**Repository:** https://github.com/johelpadilla/phi3-recd
+**Repository:** https://github.com/johelpadilla/phi3-recd  
+**DOI:** [10.5281/zenodo.21400599](https://doi.org/10.5281/zenodo.21400599)
 
 ## Preprint PDFs (v0.5)
 

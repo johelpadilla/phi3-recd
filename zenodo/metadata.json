@@ -1,0 +1,64 @@
+{
+  "title": "Integrating Φ₃ (excess³) into RECD Dynamics: From Parallel Metric to Structural Clock Contribution",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p><strong>Bilingual academic preprint (English + Spanish)</strong> on coupling Level-3 ordinal synergy (Φ₃ / excess³) into the Discrete Extramental Clock (RECD).</p><p><strong>Proposal 1 (operational default)</strong> multiplies the legacy RECD increment by a surplus-gated gain Γ₃ with hardened activation gate A₃ (ablation via β=0). <strong>Proposal 2</strong> is experimental: dual-channel advance with optional Feigenbaum deepening.</p><p>Contents of this deposit:</p><ul><li>English PDF + Spanish PDF (preprint draft v0.5)</li><li>Markdown sources (<code>manuscript.md</code>, <code>manuscript_es.md</code>)</li><li>Python package <code>phi3-recd</code> 0.5.0 (hardened A₃, P1, P2 maps)</li><li>Synthetic S0–S2 validation and dual-domain smoke scripts (Holter SDDB/NSRDB; DengAI San Juan/Iquitos)</li><li>Figures, bibliography, and dual-language PDF build pipeline</li></ul><p><strong>GitHub:</strong> <a href=\"https://github.com/johelpadilla/phi3-recd\">https://github.com/johelpadilla/phi3-recd</a></p><p><strong>PyPI:</strong> <a href=\"https://pypi.org/project/phi3-recd/\">phi3-recd</a></p><p>Empirics and scientific claims are frozen at draft v0.5. excess³ weights remain pre-specified (0.6 Syn + 0.4 Surp). Causal claims are restricted to dynamical influence on the discrete clock index.</p>",
+  "creators": [
+    {
+      "name": "Padilla-Villanueva, Johel",
+      "affiliation": "Department of Environmental Health, University of Puerto Rico — Medical Sciences Campus",
+      "orcid": "0000-0002-5797-6931"
+    }
+  ],
+  "keywords": [
+    "Systemic Tau",
+    "RECD",
+    "excess3",
+    "Phi3",
+    "ordinal synergy",
+    "early warning",
+    "Feigenbaum",
+    "Holter",
+    "DengAI",
+    "complex systems",
+    "discrete clock"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "publication_date": "2026-07-16",
+  "version": "0.5.0",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/johelpadilla/phi3-recd",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.21385937",
+      "relation": "cites",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21287252",
+      "relation": "cites",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21271145",
+      "relation": "cites",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21348295",
+      "relation": "cites",
+      "resource_type": "software",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Preprint draft v0.5 (bilingual EN/ES). Package phi3-recd 0.5.0 on PyPI. Contact: joel.padilla2@upr.edu · johelpadilla@gmail.com"
+}

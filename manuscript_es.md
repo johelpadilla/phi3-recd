@@ -6,6 +6,9 @@
 **Contacto:** joel.padilla2@upr.edu · johelpadilla@gmail.com  
 **Fecha:** julio de 2026  
 **Palabras clave:** Tau Sistémico, RECD, excess³, sinergia ordinal, señales de alerta temprana, universalidad de Feigenbaum, conjunciones anidadas, sistemas complejos
+**Versión:** preprint v0.5 (borrador académico)  
+**Repositorio:** [https://github.com/johelpadilla/phi3-recd](https://github.com/johelpadilla/phi3-recd)  
+**DOI:** [10.5281/zenodo.21400599](https://doi.org/10.5281/zenodo.21400599)  
 
 ---
 

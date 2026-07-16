@@ -22,6 +22,9 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+STATE_PATH = ROOT / "zenodo" / "deposition_state.json"
+GITHUB_URL = "https://github.com/johelpadilla/phi3-recd"
+GITHUB_SHORT = "github.com/johelpadilla/phi3-recd"
 # Defaults (English); overridden by configure_language()
 LANG = "en"
 MANUSCRIPT = ROOT / "manuscript.md"
@@ -36,6 +39,9 @@ ABSTRACT_SIGNATURE = "identify critical transitions through ordinal relational r
 META_TITLE = "Integrating Phi3 (excess3) into RECD Dynamics"
 META_SUBJECT = "Phi3 excess3 RECD dynamics integration July 2026"
 META_KEYWORDS = "Systemic Tau, RECD, excess3, ordinal synergy, early warning"
+# Filled by load_deposit_ids() — Zenodo prereserved DOI + GitHub
+DOI = ""
+DOI_URL = ""
 
 # Strings that must never appear in the produced PDF (bytes or text layer).
 BANNED_PDF_STRINGS = (
@@ -209,8 +215,48 @@ FIG_PAGES_ES: list[list[tuple[str, str, float]]] = [
 ]
 
 
+def load_deposit_ids() -> tuple[str, str]:
+    """Load Zenodo DOI from deposition_state.json or env (empty if not yet reserved)."""
+    import os
+
+    doi = (os.environ.get("ZENODO_DOI") or "").strip()
+    if not doi and STATE_PATH.is_file():
+        try:
+            import json
+
+            st = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+            doi = (st.get("doi") or "").strip()
+        except Exception:
+            doi = ""
+    doi_url = f"https://doi.org/{doi}" if doi else ""
+    return doi, doi_url
+
+
+def _ident_block_tex() -> str:
+    """Repository + DOI lines on the title page (and PDF hyperlinks)."""
+    load = load_deposit_ids()
+    doi, doi_url = load
+    # Always print GitHub; DOI only when reserved (so local drafts stay clean).
+    if LANG == "es":
+        repo_lab, doi_lab, ver_lab = "Repositorio", "DOI", "Versi\\'on"
+        ver = "preprint v0.5 (borrador acad\\'emico)"
+    else:
+        repo_lab, doi_lab, ver_lab = "Repository", "DOI", "Version"
+        ver = "preprint draft v0.5"
+    lines = [
+        rf"{ver_lab}: {ver}\\[0.12em]",
+        rf"{repo_lab}: \href{{{GITHUB_URL}}}{{{GITHUB_SHORT}}}\\[0.12em]",
+    ]
+    if doi:
+        lines.append(rf"{doi_lab}: \href{{{doi_url}}}{{{doi}}}")
+    else:
+        lines.append(rf"{doi_lab}: \textit{{(Zenodo DOI upon deposit)}}")
+    return "\n    ".join(lines)
+
+
 def _header_tex() -> str:
     """Language-aware academic title page + shared LaTeX preamble."""
+    ident = _ident_block_tex()
     if LANG == "es":
         series = r"M\'etodos y teor\'ia"
         date = r"julio de 2026"
@@ -359,8 +405,9 @@ def _header_tex() -> str:
     \href{{https://orcid.org/0000-0002-5797-6931}}{{0000-0002-5797-6931}}\\[0.12em]
     \texttt{{joel.padilla2@upr.edu}}
     \textperiodcentered\
-    \texttt{{johelpadilla@gmail.com}}\par}}
-  \vspace{{1.1cm}}
+    \texttt{{johelpadilla@gmail.com}}\\[0.28em]
+    {ident}\par}}
+  \vspace{{0.85cm}}
   \noindent
   \colorbox{{soft}}{{%
     \begin{{minipage}}{{0.94\textwidth}}
@@ -488,7 +535,7 @@ def strip_front_meta(text: str) -> str:
     """Drop Author/Affiliation/.../Keywords block that belongs on the cover only."""
     # Remove meta lines that start with **Label:** near the top (EN + ES)
     text = re.sub(
-        r"(?ms)\A(?:\s*\*\*(?:Author|Autor|Affiliation|Afiliaci[oó]n|ORCID|Contact|Contacto|Version|Type|Date|Fecha|Keywords|Palabras clave):\*\*[^\n]*\n)+",
+        r"(?ms)\A(?:\s*\*\*(?:Author|Autor|Affiliation|Afiliaci[oó]n|ORCID|Contact|Contacto|Version|Versi[oó]n|Type|Date|Fecha|Keywords|Palabras clave|Repository|Repositorio|DOI):\*\*[^\n]*\n)+",
         "",
         text,
     )

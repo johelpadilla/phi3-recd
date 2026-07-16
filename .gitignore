@@ -31,6 +31,10 @@ HANDOFF.md
 PDF_VERIFY.txt
 PDF_VERIFY_ES.txt
 
+# Secrets (never commit)
+.zenodo_token
+.env
+
 # OS / editor
 .DS_Store
 .idea/

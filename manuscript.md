@@ -6,6 +6,9 @@
 **Contact:** joel.padilla2@upr.edu · johelpadilla@gmail.com  
 **Date:** July 2026  
 **Keywords:** Systemic Tau, RECD, excess³, ordinal synergy, early warning signals, Feigenbaum universality, nested conjunctions, complex systems
+**Version:** preprint draft v0.5  
+**Repository:** [https://github.com/johelpadilla/phi3-recd](https://github.com/johelpadilla/phi3-recd)  
+**DOI:** [10.5281/zenodo.21400599](https://doi.org/10.5281/zenodo.21400599)  
 
 ---
 

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: If you use this preprint or the phi3-recd package, please cite it.
+title: "Integrating Φ₃ (excess³) into RECD Dynamics: From Parallel Metric to Structural Clock Contribution"
+authors:
+  - family-names: Padilla-Villanueva
+    given-names: Johel
+    orcid: https://orcid.org/0000-0002-5797-6931
+    affiliation: Department of Environmental Health, University of Puerto Rico — Medical Sciences Campus
+type: article
+version: 0.5.0
+doi: "10.5281/zenodo.21400599"
+url: "https://doi.org/10.5281/zenodo.21400599"
+repository-code: "https://github.com/johelpadilla/phi3-recd"
+date-released: 2026-07-16
+license: CC-BY-4.0
+keywords:
+  - Systemic Tau
+  - RECD
+  - excess3
+  - Phi3
+  - early warning
