@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phi3-recd"
+version = "0.5.0"
+description = "Φ₃ (excess³) → RECD clock maps: hardened A₃ gate, multiplicative gain Γ₃ (P1), dual-channel experimental P2"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Johel Padilla-Villanueva", email = "joel.padilla2@upr.edu" },
+]
+keywords = [
+    "RECD",
+    "excess3",
+    "Phi3",
+    "Systemic Tau",
+    "ordinal synergy",
+    "early-warning",
+    "discrete clock",
+    "Feigenbaum",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "numpy>=1.22",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "build", "twine"]
+# Ordinal proxies (excess³, Φ₁/Φ₂) live in nested-recd; not required for maps alone.
+ordinal = ["nested-recd>=0.2.0"]
+plots = ["matplotlib>=3.7"]
+full = ["nested-recd>=0.2.0", "matplotlib>=3.7", "pandas>=1.5"]
+
+[project.urls]
+Homepage = "https://github.com/johelpadilla/phi3-recd"
+Repository = "https://github.com/johelpadilla/phi3-recd"
+Documentation = "https://github.com/johelpadilla/phi3-recd#readme"
+
+[project.scripts]
+phi3-recd-demo = "phi3_recd.core:_synthetic_demo"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["phi3_recd*"]
+
+[tool.setuptools.package-data]
+phi3_recd = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

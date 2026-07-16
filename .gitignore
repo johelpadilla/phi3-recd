@@ -1,0 +1,38 @@
+# Python packaging
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+*.egg
+.venv/
+venv/
+
+# LaTeX / PDF build scratch (keep released PDF at repo root)
+_build/
+*.aux
+*.log
+*.out
+*.toc
+figures/_pdf_build.log
+
+# Duplicate PDF aliases (canonical names: *_v0.5.pdf)
+*_v0.5.1.pdf
+
+# Local table raster dumps (not used by manuscript pipeline)
+/tbl-*.png
+/tblb-*.png
+
+# Agent session notes (local only)
+HANDOFF.md
+PDF_VERIFY.txt
+PDF_VERIFY_ES.txt
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
